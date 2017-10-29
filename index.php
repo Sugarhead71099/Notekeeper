@@ -5,7 +5,8 @@
 																				   'randomNum2' => rand(1, 10)
 																				   );
 
-	include_once('config.inc.php');
+	require_once('config.inc.php');
+	include_once('createTables.php');
 
 	if(!empty($_POST))
 		if(isset($_GET['signup']) && $_GET['signup'] == 1) {

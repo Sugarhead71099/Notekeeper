@@ -1,9 +1,16 @@
-<?php session_start(); ob_start();
+<?php
+
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+
+	if(!session_id())
+		session_start();
+	ob_start();
 
 	// Get and store the pair of numbers for human_validation (custom capatcha)
 	$_SESSION['human_validation_pair' . ( count($_SESSION) + 1 )] = (object) array('randomNum1' => rand(1, 10),
-																				   'randomNum2' => rand(1, 10)
-																				   );
+										       'randomNum2' => rand(1, 10)
+										      );
 
 	require_once('config.inc.php');
 	include_once('createTables.php');

@@ -1,4 +1,4 @@
-<?php session_start(); ob_start();
+<?php if(!session_id()) session_start(); ob_start();
 
 	include_once('config.inc.php');
 
